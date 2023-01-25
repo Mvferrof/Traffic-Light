@@ -1,14 +1,20 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
+
 
 //create your first component
 const Home = () => {
-const [color,setcolor]= useState ("");
+	const [ color, setColor ] = useState("");
 
+	
 	return (
 		<div className="traffic-light">
-			<div className ={color === "red" ? "glow light red" : "light red"} onClick></div>
-			<div className ={color === "yellow" ? "glow light yellow" : "light yellow"}onclick></div>
-			<div className = {color === "green" ? "glow light green" : "light green"}onclick></div>
+			<div onClick = {() => setColor("red")} 
+			className = {"light red" + (color === "red" ? " glow" : "")}></div>
+				<div onClick = {() => setColor("yellow")} 
+			className = {"light yellow" + (color === "yellow" ? " glow" : "")}></div>
+				<div onClick = {() => setColor("green")} 
+			className = {"light green " + (color === "green" ? " glow" : "")}></div>
+			
 		</div>
 	);
 };
